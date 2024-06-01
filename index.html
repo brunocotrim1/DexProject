@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>NFT Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.9.0/dist/web3.min.js"></script>
+    <script src="./main.js" type="module"></script>
+</head>
+
+<body>
+    <h1>Decentralized Finance Application</h1>
+    <h1 id = "currentAccount"></h1>
+    <!-- <div class="wrapper">
+        <button onclick="connectMetaMask()">Connect MetaMask</button>
+    </div> -->
+    <div class="container">
+    <div class="wrapper">
+        <h2>Set Exchange Rate</h2>
+        <input type="number" id="newRate" placeholder="Rate IN WEI">
+        <button onclick="setRateEthToDex()">Set Rate</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Buy DEX Tokens</h2>
+        <input type="number" id="ethAmount" placeholder="Wei Amount">
+        <button onclick="buyDex()">Buy DEX</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>DEX Balance</h2>
+        <button id="getDexBalanceBtn" onclick="getDex()">Get Dex Balance</button>
+        <div id="dexBalanceDisplay" class="hidden"></div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Sell DEX Tokens</h2>
+        <input type="number" id="dexAmount" placeholder="Dei Amount">
+        <button onclick="sellDex()">Sell DEX</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Loan Contract Interaction</h2>
+        <label for="loanAmount">Enter Loan Amount:</label>
+        <input type="number" id="loanAmount">
+        <br>
+        <label for="deadline">Select Deadline:</label>
+        <input type="datetime-local" id="deadline">
+        <br>
+        <button onclick="loan()">Request Loan</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Return Loan</h2>
+        <input type="number" id="loanId" placeholder="Loan ID">
+        <input type="number" id="returnEthAmount" placeholder="Wei Amount">
+        <button onclick="returnLoan()">Return Loan</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Contract ETH Balance</h2>
+        <button id="getEthBalanceBtn" onclick="getEthTotalBalance()">Get ETH Balance</button>
+        <div id="ethBalanceDisplay" class="hidden"></div>
+    </div>
+
+    <div class="wrapper">
+        <h2>DEX Exchange Rate</h2>
+        <button id="getRateBtn" onclick="getRateEthToDex()">Get WeiToDei Rate</button>
+        <div id="rateDisplay" class="hidden"></div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Mint NFTs</h2>
+        <input type="text" id="tokenURI" placeholder="Token URI to Mint">
+        <button onclick="mintNFT()">Mint NFT</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Available NFTs for Loans</h2>
+        <button onclick="getAvailableNfts()">Get NFTs</button>
+        <ul id="nftList" class="hidden"></ul>
+    </div>
+
+    <div class="wrapper">
+        <h3>Total Borrowed and Not Paid Back ETH</h3>
+        <button onclick="getTotalBorrowedAndNotPaidBackEth()">Get Total</button>
+        <div id="borrowedEthDisplay" class="hidden"></div>
+    </div>
+
+    <div class="wrapper">
+        <h2>Make Loan Request by NFT</h2>
+        <label for="nftID">Enter NFT ID:</label>
+        <input type="number" id="nftId" placeholder="NFT ID">
+        <br>
+        <label for="nftLoanAmount">Enter Loan Amount:</label>
+        <input type="number" id="nftLoanAmount" placeholder="Loan Amount in Wei">
+        <br>
+        <label for="deadline">Select Deadline:</label>
+        <input type="datetime-local" id="nftDeadline">
+        <br>
+        <button onclick="makeLoanRequestByNft()">Request Loan</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Cancel Loan Request by NFT</h2>
+        <input type="text" id="cancelNftId" placeholder="NFT ID">
+        <button onclick="cancelLoanRequestByNft()">Cancel Request</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Loan by NFT</h2>
+        <input type="text" id="lendNftId" placeholder="NFT ID">
+        <button onclick="loanByNft()">Lend Loan</button>
+    </div>
+
+    <div class="wrapper">
+        <h2>Listen to Loan Creation Events</h2>
+        <button onclick="listenToLoanCreation()">Listen</button>
+        <ol id="eventCreationList" start="0" class="hidden"></ol>
+    </div>
+
+    <div class="wrapper">
+        <h2>Get All Token URIs</h2>
+        <button id="tokenUrisGetter" onclick="getAllTokenURIs()">Get Tokens</button>
+        <ul id="tokenUriList" class="hidden"></ul>
+    </div>
+    
+    <div class="wrapper">
+        <h2>Check Loan Status</h2>
+        <input type="number" id="numberLoanStatusId" placeholder="Loan ID">
+        <div id="loanStatusDisplay" class="hidden"></div>
+        <button onclick="checkLoanStatus()">Check Loans</button>
+    </div>
+    </div>
+</body>
+
+</html>
